@@ -6,10 +6,10 @@ namespace: ""
 devspaces:
   subscription:
     channel: stable
-    installPlanApproval: Automatic
+    installPlanApproval: Manual
     name: devspaces
     source: redhat-operators
-    startingCSV: ""
+    startingCSV: "devspacesoperator.v3.30.0"
     sourceNamespace: openshift-marketplace
 
 webTerminal:
