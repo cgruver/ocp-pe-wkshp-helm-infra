@@ -2,17 +2,17 @@ nameOverride: ""
 
 adminPassword: ""
 
-vault:
-  namespace: vault
-
 sonarqube:
   image: quay.io/kenmoini/sonarqube:34b8fd8
   replicas: 1
   port: 9000
   resources:
+    limits:
+      cpu: "2"
+      memory: 4Gi
     requests:
-      cpu: 200m
-      memory: 1Gi
+      cpu: "1"
+      memory: 2Gi
   persistence:
     size: 5Gi
   route:
@@ -34,3 +34,6 @@ postgresql:
   database: sonar
   username: sonaruser
   password: ""
+
+vault:
+  namespace: vault
