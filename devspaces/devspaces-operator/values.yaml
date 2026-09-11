@@ -13,7 +13,7 @@ devspaces:
     sourceNamespace: openshift-marketplace
 
 webTerminal:
-  enabled: true
+  enabled: false
   subscription:
     channel: fast
     name: web-terminal
