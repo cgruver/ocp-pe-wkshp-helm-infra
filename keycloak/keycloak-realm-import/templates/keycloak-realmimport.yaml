@@ -764,6 +764,18 @@ spec:
         authenticationFlowBindingOverrides: {}
         fullScopeAllowed: true
         nodeReRegistrationTimeout: -1
+        protocolMappers:
+          - id: {{ uuidv4 }}
+            name: groups
+            protocol: openid-connect
+            protocolMapper: oidc-group-membership-mapper
+            consentRequired: false
+            config:
+              full.path: 'false'
+              id.token.claim: 'true'
+              access.token.claim: 'true'
+              claim.name: groups
+              userinfo.token.claim: 'true'
         defaultClientScopes:
           - profile
           - roles
