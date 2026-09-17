@@ -29,8 +29,6 @@ spec:
             - email
           name:
             - name
-          groups:
-            - groups
         extraScopes:
           - email
           - profile
