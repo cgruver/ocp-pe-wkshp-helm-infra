@@ -20,3 +20,7 @@ groups:
     users:
       - pe1
       - pe2
+  - name: developers
+    users:
+      - dev1
+      - dev2
