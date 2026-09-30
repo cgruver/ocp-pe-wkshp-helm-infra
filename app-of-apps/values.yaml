@@ -216,10 +216,6 @@ openshiftOAuth:
   name: openshift-oauth
   namespace: openshift-config
 
-kubernetesImagepuller:
-  name: kubernetes-imagepuller
-  namespace: openshift-operators
-
 devspaces:
   enabled: true
   name: devspaces
