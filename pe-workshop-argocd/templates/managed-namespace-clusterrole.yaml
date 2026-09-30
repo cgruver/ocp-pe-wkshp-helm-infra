@@ -1,0 +1,4252 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: managed-namespace
+rules:
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operators.coreos.com
+    resources:
+      - subscriptions
+  - verbs:
+      - delete
+    apiGroups:
+      - operators.coreos.com
+    resources:
+      - clusterserviceversions
+      - catalogsources
+      - installplans
+      - subscriptions
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operators.coreos.com
+    resources:
+      - clusterserviceversions
+      - catalogsources
+      - installplans
+      - subscriptions
+      - operatorgroups
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - packages.operators.coreos.com
+    resources:
+      - packagemanifests
+      - packagemanifests/icon
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - analysisruns
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - analysistemplates
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applicationsets
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - appprojects
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - argocds
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - noobaa.io
+    resources:
+      - backingstores
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhdh.redhat.com
+    resources:
+      - backstages
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - backups
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - noobaa.io
+    resources:
+      - bucketclasses
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - trust.cert-manager.io
+    resources:
+      - bundles
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - platform.stackrox.io
+    resources:
+      - centrals
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephblockpoolradosnamespaces
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephblockpools
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephbucketnotifications
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephbuckettopics
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephclients
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephclusters
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - cephconnections
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephcosidrivers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephfilesystemmirrors
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephfilesystems
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephfilesystemsubvolumegroups
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephnfses
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectrealms
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectstores
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectstoreusers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectzonegroups
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectzones
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephrbdmirrors
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificates
+      - certificaterequests
+      - issuers
+  - verbs:
+      - update
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificates/status
+  - verbs:
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - challenges
+  - verbs:
+      - delete
+      - deletecollection
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - orders
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificates
+      - certificaterequests
+      - issuers
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - challenges
+      - orders
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificaterequests
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificates
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.openshift.io
+    resources:
+      - certmanagers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - challenges
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - org.eclipse.che
+    resources:
+      - checlusters
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - clientprofilemappings
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - clientprofiles
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - clusteranalysistemplates
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - clusterimagecatalogs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - clusterissuers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - clusters
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - console.streamshub.github.com
+    resources:
+      - consoles
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - csiaddonsnodes
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - ctlogs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - databases
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - workspace.devfile.io
+    resources:
+      - devworkspaces
+      - devworkspacetemplates
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - controller.devfile.io
+    resources:
+      - devworkspaceroutings
+      - devworkspaceoperatorconfigs
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - workspace.devfile.io
+    resources:
+      - devworkspaces
+      - devworkspacetemplates
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - controller.devfile.io
+    resources:
+      - devworkspaceroutings
+      - devworkspaceoperatorconfigs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - controller.devfile.io
+    resources:
+      - devworkspaceoperatorconfigs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - controller.devfile.io
+    resources:
+      - devworkspaceroutings
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - workspace.devfile.io
+    resources:
+      - devworkspaces
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - workspace.devfile.io
+    resources:
+      - devworkspacetemplates
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - drivers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - encryptionkeyrotationcronjobs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - encryptionkeyrotationjobs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - experiments
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - external-secrets.io
+    resources:
+      - externalsecrets
+      - secretstores
+      - clustersecretstores
+      - pushsecrets
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - generators.external-secrets.io
+    resources:
+      - acraccesstokens
+      - ecrauthorizationtokens
+      - fakes
+      - gcraccesstokens
+      - passwords
+      - vaultdynamicsecrets
+  - verbs:
+      - get
+      - watch
+      - list
+    apiGroups:
+      - external-secrets.io
+    resources:
+      - externalsecrets
+      - secretstores
+      - clustersecretstores
+      - pushsecrets
+  - verbs:
+      - get
+      - watch
+      - list
+    apiGroups:
+      - generators.external-secrets.io
+    resources:
+      - acraccesstokens
+      - ecrauthorizationtokens
+      - fakes
+      - gcraccesstokens
+      - passwords
+      - vaultdynamicsecrets
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - failoverquorums
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - fulcios
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - pipelines.openshift.io
+    resources:
+      - gitopsservices
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - imagecatalogs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argocd-image-updater.argoproj.io
+    resources:
+      - imageupdaters
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - issuers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.openshift.io
+    resources:
+      - istiocsrs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkabridges
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkaconnectors
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkaconnects
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkamirrormaker2s
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkanodepools
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkarebalances
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkas
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkatopics
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkausers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - k8s.keycloak.org
+    resources:
+      - keycloakrealmimports
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - k8s.keycloak.org
+    resources:
+      - keycloaks
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - che.eclipse.org
+    resources:
+      - kubernetesimagepullers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - manualapprovalgates
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - namespacemanagements
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - noobaa.io
+    resources:
+      - namespacestores
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - networkfenceclasses
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - networkfences
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - noobaa.io
+    resources:
+      - noobaaaccounts
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - noobaa.io
+    resources:
+      - noobaas
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - notificationsconfigurations
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - objectbucket.io
+    resources:
+      - objectbucketclaims
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - objectbucket.io
+    resources:
+      - objectbuckets
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - ocsinitializations
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - k8s.ovn.org
+    resources:
+      - userdefinednetworks
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - openshiftpipelinesascodes
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - operatorconfigs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - orders
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - packages.operators.coreos.com
+    resources:
+      - packagemanifests
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - pipelinesascode.tekton.dev
+    resources:
+      - repositories
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - poolers
+  - verbs:
+      - get
+      - list
+      - update
+      - create
+      - watch
+      - patch
+      - delete
+    apiGroups:
+      - helm.openshift.io
+    resources:
+      - projecthelmchartrepositories
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - publications
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - quay.redhat.com
+    resources:
+      - quayregistries
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ramendr.openshift.io
+    resources:
+      - recipes
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - reclaimspacecronjobs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - reclaimspacejobs
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - secrets
+      - serviceaccounts
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreamimages
+      - imagestreammappings
+      - imagestreams
+      - imagestreams/secrets
+      - imagestreamtags
+      - imagetags
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreamimports
+  - verbs:
+      - get
+      - update
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreams/layers
+  - verbs:
+      - get
+    apiGroups:
+      - ''
+    resources:
+      - namespaces
+  - verbs:
+      - get
+    apiGroups:
+      - ''
+      - project.openshift.io
+    resources:
+      - projects
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - rekors
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - rolloutmanagers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - rollouts
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - scheduledbackups
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - platform.stackrox.io
+    resources:
+      - securedclusters
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - securesigns
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - config.stackrox.io
+    resources:
+      - securitypolicies
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageautoscalers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageclients
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageclusterpeers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageclusters
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageconsumers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - core.strimzi.io
+    resources:
+      - strimzipodsets
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - subscriptions
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - syncerservices
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - pods/attach
+      - pods/exec
+      - pods/portforward
+      - pods/proxy
+      - secrets
+      - services/proxy
+  - verbs:
+      - impersonate
+    apiGroups:
+      - ''
+    resources:
+      - serviceaccounts
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - ''
+    resources:
+      - pods
+      - pods/attach
+      - pods/exec
+      - pods/portforward
+      - pods/proxy
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+    resources:
+      - pods/eviction
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - ''
+    resources:
+      - configmaps
+      - endpoints
+      - events
+      - persistentvolumeclaims
+      - replicationcontrollers
+      - replicationcontrollers/scale
+      - secrets
+      - serviceaccounts
+      - services
+      - services/proxy
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+    resources:
+      - serviceaccounts/token
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - apps
+    resources:
+      - daemonsets
+      - deployments
+      - deployments/rollback
+      - deployments/scale
+      - replicasets
+      - replicasets/scale
+      - statefulsets
+      - statefulsets/scale
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - autoscaling
+    resources:
+      - horizontalpodautoscalers
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - batch
+    resources:
+      - cronjobs
+      - jobs
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - extensions
+    resources:
+      - daemonsets
+      - deployments
+      - deployments/rollback
+      - deployments/scale
+      - ingresses
+      - replicasets
+      - replicasets/scale
+      - replicationcontrollers/scale
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+    apiGroups:
+      - policy
+    resources:
+      - poddisruptionbudgets
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - metrics.k8s.io
+    resources:
+      - pods
+      - nodes
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreams
+  - verbs:
+      - update
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - builds/details
+  - verbs:
+      - get
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - builds
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+      - deletecollection
+    apiGroups:
+      - snapshot.storage.k8s.io
+    resources:
+      - volumesnapshots
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - buildconfigs
+      - buildconfigs/webhooks
+      - builds
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - builds/log
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - buildconfigs/instantiate
+      - buildconfigs/instantiatebinary
+      - builds/clone
+  - verbs:
+      - edit
+      - view
+    apiGroups:
+      - build.openshift.io
+    resources:
+      - jenkins
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+      - apps.openshift.io
+    resources:
+      - deploymentconfigs
+      - deploymentconfigs/scale
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+      - apps.openshift.io
+    resources:
+      - deploymentconfigrollbacks
+      - deploymentconfigs/instantiate
+      - deploymentconfigs/rollback
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - apps.openshift.io
+    resources:
+      - deploymentconfigs/log
+      - deploymentconfigs/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreams/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - quota.openshift.io
+    resources:
+      - appliedclusterresourcequotas
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+      - route.openshift.io
+    resources:
+      - routes
+  - verbs:
+      - create
+    apiGroups:
+      - ''
+      - route.openshift.io
+    resources:
+      - routes/custom-host
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - route.openshift.io
+    resources:
+      - routes/status
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+      - template.openshift.io
+    resources:
+      - processedtemplates
+      - templateconfigs
+      - templateinstances
+      - templates
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - buildlogs
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - resourcequotausages
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - gateway.networking.k8s.io
+    resources:
+      - gateways
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+      - deletecollection
+    apiGroups:
+      - gateway.networking.k8s.io
+    resources:
+      - httproutes
+      - grpcroutes
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - tekton.dev
+    resources:
+      - tasks
+      - taskruns
+      - pipelines
+      - pipelineruns
+      - runs
+      - customruns
+      - stepactions
+  - verbs:
+      - get
+      - list
+    apiGroups:
+      - results.tekton.dev
+    resources:
+      - results
+      - records
+      - logs
+      - summary
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - triggers.tekton.dev
+    resources:
+      - clustertriggerbindings
+      - clusterinterceptors
+      - eventlisteners
+      - interceptors
+      - triggers
+      - triggerbindings
+      - triggertemplates
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonaddons
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonchains
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonconfigs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonhubs
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektoninstallersets
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonmulticlusterproxyaaes
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonpipelines
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonpruners
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonresults
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonschedulers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektontriggers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - timestampauthorities
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - trillians
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - operator.openshift.io
+    resources:
+      - trustmanagers
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - tufs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - analysisruns.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - analysisruns
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - analysistemplates.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - analysistemplates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - applications.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - applicationsets.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applicationsets
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - appprojects.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - appprojects
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - argocds.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - argocds
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - backingstores.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - noobaa.io
+    resources:
+      - backingstores
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - backstages.rhdh.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhdh.redhat.com
+    resources:
+      - backstages
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - backups.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - backups
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - bucketclasses.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - noobaa.io
+    resources:
+      - bucketclasses
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - bundles.trust.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - trust.cert-manager.io
+    resources:
+      - bundles
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - centrals.platform.stackrox.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - platform.stackrox.io
+    resources:
+      - centrals
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephblockpoolradosnamespaces.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephblockpoolradosnamespaces
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephblockpools.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephblockpools
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephbucketnotifications.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephbucketnotifications
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephbuckettopics.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephbuckettopics
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephclients.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephclients
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephclusters.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephclusters
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephconnections.csi.ceph.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - cephconnections
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephcosidrivers.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephcosidrivers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephfilesystemmirrors.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephfilesystemmirrors
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephfilesystems.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephfilesystems
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephfilesystemsubvolumegroups.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephfilesystemsubvolumegroups
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephnfses.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephnfses
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephobjectrealms.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectrealms
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephobjectstores.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectstores
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephobjectstoreusers.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectstoreusers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephobjectzonegroups.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectzonegroups
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephobjectzones.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephobjectzones
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - cephrbdmirrors.ceph.rook.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ceph.rook.io
+    resources:
+      - cephrbdmirrors
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - certificaterequests.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificaterequests
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - certificates.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - certificates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - certmanagers.operator.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.openshift.io
+    resources:
+      - certmanagers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - challenges.acme.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - challenges
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - checlusters.org.eclipse.che
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - org.eclipse.che
+    resources:
+      - checlusters
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clientprofilemappings.csi.ceph.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - clientprofilemappings
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clientprofiles.csi.ceph.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - clientprofiles
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clusteranalysistemplates.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - clusteranalysistemplates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clusterimagecatalogs.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - clusterimagecatalogs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clusterissuers.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - clusterissuers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - clusters.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - clusters
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - consoles.console.streamshub.github.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - console.streamshub.github.com
+    resources:
+      - consoles
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - csiaddonsnodes.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - csiaddonsnodes
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - ctlogs.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - ctlogs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - databases.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - databases
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - devworkspaceoperatorconfigs.controller.devfile.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - controller.devfile.io
+    resources:
+      - devworkspaceoperatorconfigs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - devworkspaceroutings.controller.devfile.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - controller.devfile.io
+    resources:
+      - devworkspaceroutings
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - devworkspaces.workspace.devfile.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - workspace.devfile.io
+    resources:
+      - devworkspaces
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - devworkspacetemplates.workspace.devfile.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - workspace.devfile.io
+    resources:
+      - devworkspacetemplates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - drivers.csi.ceph.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - drivers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - encryptionkeyrotationcronjobs.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - encryptionkeyrotationcronjobs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - encryptionkeyrotationjobs.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - encryptionkeyrotationjobs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - experiments.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - experiments
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - failoverquorums.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - failoverquorums
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - fulcios.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - fulcios
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - gitopsservices.pipelines.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - pipelines.openshift.io
+    resources:
+      - gitopsservices
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - imagecatalogs.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - imagecatalogs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - imageupdaters.argocd-image-updater.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argocd-image-updater.argoproj.io
+    resources:
+      - imageupdaters
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - issuers.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - cert-manager.io
+    resources:
+      - issuers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - istiocsrs.operator.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.openshift.io
+    resources:
+      - istiocsrs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkabridges.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkabridges
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkaconnectors.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkaconnectors
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkaconnects.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkaconnects
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkamirrormaker2s.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkamirrormaker2s
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkanodepools.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkanodepools
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkarebalances.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkarebalances
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkas.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkas
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkatopics.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkatopics
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kafkausers.kafka.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - kafka.strimzi.io
+    resources:
+      - kafkausers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - keycloakrealmimports.k8s.keycloak.org
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - k8s.keycloak.org
+    resources:
+      - keycloakrealmimports
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - keycloaks.k8s.keycloak.org
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - k8s.keycloak.org
+    resources:
+      - keycloaks
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - kubernetesimagepullers.che.eclipse.org
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - che.eclipse.org
+    resources:
+      - kubernetesimagepullers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - manualapprovalgates.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - manualapprovalgates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - namespacemanagements.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - namespacemanagements
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - namespacestores.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - noobaa.io
+    resources:
+      - namespacestores
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - networkfenceclasses.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - networkfenceclasses
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - networkfences.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - networkfences
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - noobaaaccounts.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - noobaa.io
+    resources:
+      - noobaaaccounts
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - noobaas.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - noobaa.io
+    resources:
+      - noobaas
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - notificationsconfigurations.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - notificationsconfigurations
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - objectbucketclaims.objectbucket.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - objectbucket.io
+    resources:
+      - objectbucketclaims
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - objectbuckets.objectbucket.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - objectbucket.io
+    resources:
+      - objectbuckets
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - ocsinitializations.ocs.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - ocsinitializations
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - k8s.ovn.org
+    resources:
+      - userdefinednetworks
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - openshiftpipelinesascodes.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - openshiftpipelinesascodes
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - operatorconfigs.csi.ceph.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csi.ceph.io
+    resources:
+      - operatorconfigs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - orders.acme.cert-manager.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - acme.cert-manager.io
+    resources:
+      - orders
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - packages.operators.coreos.com
+    resources:
+      - packagemanifests
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - poolers.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - poolers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - publications.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - publications
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - quayregistries.quay.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - quay.redhat.com
+    resources:
+      - quayregistries
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - recipes.ramendr.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ramendr.openshift.io
+    resources:
+      - recipes
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - reclaimspacecronjobs.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - reclaimspacecronjobs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - reclaimspacejobs.csiaddons.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - csiaddons.openshift.io
+    resources:
+      - reclaimspacejobs
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreamimages
+      - imagestreammappings
+      - imagestreams
+      - imagestreamtags
+      - imagetags
+  - verbs:
+      - get
+    apiGroups:
+      - ''
+      - image.openshift.io
+    resources:
+      - imagestreams/layers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - rekors.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - rekors
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - rolloutmanagers.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - rolloutmanagers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - rollouts.argoproj.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - rollouts
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - scheduledbackups.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - scheduledbackups
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - securedclusters.platform.stackrox.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - platform.stackrox.io
+    resources:
+      - securedclusters
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - securesigns.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - securesigns
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - securitypolicies.config.stackrox.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - config.stackrox.io
+    resources:
+      - securitypolicies
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - storageautoscalers.ocs.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageautoscalers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - storageclients.ocs.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageclients
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - storageclusterpeers.ocs.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageclusterpeers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - storageclusters.ocs.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageclusters
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - storageconsumers.ocs.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ocs.openshift.io
+    resources:
+      - storageconsumers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - strimzipodsets.core.strimzi.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - core.strimzi.io
+    resources:
+      - strimzipodsets
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - subscriptions.postgresql.cnpg.noobaa.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - postgresql.cnpg.noobaa.io
+    resources:
+      - subscriptions
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - syncerservices.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - syncerservices
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - configmaps
+      - endpoints
+      - persistentvolumeclaims
+      - persistentvolumeclaims/status
+      - pods
+      - replicationcontrollers
+      - replicationcontrollers/scale
+      - serviceaccounts
+      - services
+      - services/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - bindings
+      - events
+      - limitranges
+      - namespaces/status
+      - pods/log
+      - pods/status
+      - replicationcontrollers/status
+      - resourcequotas
+      - resourcequotas/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - namespaces
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - discovery.k8s.io
+    resources:
+      - endpointslices
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - apps
+    resources:
+      - controllerrevisions
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/scale
+      - deployments/status
+      - replicasets
+      - replicasets/scale
+      - replicasets/status
+      - statefulsets
+      - statefulsets/scale
+      - statefulsets/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - autoscaling
+    resources:
+      - horizontalpodautoscalers
+      - horizontalpodautoscalers/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - batch
+    resources:
+      - cronjobs
+      - cronjobs/status
+      - jobs
+      - jobs/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - extensions
+    resources:
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/scale
+      - deployments/status
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+      - replicasets
+      - replicasets/scale
+      - replicasets/status
+      - replicationcontrollers/scale
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - policy
+    resources:
+      - poddisruptionbudgets
+      - poddisruptionbudgets/status
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - networking.k8s.io
+    resources:
+      - ingresses
+      - ingresses/status
+      - networkpolicies
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - snapshot.storage.k8s.io
+    resources:
+      - volumesnapshots
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - buildconfigs
+      - buildconfigs/webhooks
+      - builds
+  - verbs:
+      - view
+    apiGroups:
+      - build.openshift.io
+    resources:
+      - jenkins
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - apps.openshift.io
+    resources:
+      - deploymentconfigs
+      - deploymentconfigs/scale
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - route.openshift.io
+    resources:
+      - routes
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - template.openshift.io
+    resources:
+      - processedtemplates
+      - templateconfigs
+      - templateinstances
+      - templates
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - build.openshift.io
+    resources:
+      - buildlogs
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - gateway.networking.k8s.io
+    resources:
+      - httproutes
+      - grpcroutes
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - tekton.dev
+    resources:
+      - tasks
+      - taskruns
+      - pipelines
+      - pipelineruns
+      - runs
+      - customruns
+      - stepactions
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - tekton.dev
+    resources:
+      - clustertasks
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - triggers.tekton.dev
+    resources:
+      - clustertriggerbindings
+  - verbs:
+      - get
+    apiGroups:
+      - route.openshift.io
+    resources:
+      - routes
+    resourceNames:
+      - tekton-results-api-service
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - triggers.tekton.dev
+    resources:
+      - clustertriggerbindings
+      - clusterinterceptors
+      - eventlisteners
+      - interceptors
+      - triggers
+      - triggerbindings
+      - triggertemplates
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonaddons.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonaddons
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonchains.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonchains
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonconfigs.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonconfigs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonhubs.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonhubs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektoninstallersets.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektoninstallersets
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonmulticlusterproxyaaes.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonmulticlusterproxyaaes
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonpipelines.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonpipelines
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonpruners.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonpruners
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonresults.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonresults
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektonschedulers.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonschedulers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tektontriggers.operator.tekton.dev
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektontriggers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - timestampauthorities.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - timestampauthorities
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - trillians.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - trillians
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - trustmanagers.operator.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operator.openshift.io
+    resources:
+      - trustmanagers
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - tufs.rhtas.redhat.com
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - rhtas.redhat.com
+    resources:
+      - tufs
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumegroupreplicationclasses.replication.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumegroupreplicationclasses
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumegroupreplicationcontents.replication.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumegroupreplicationcontents
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumegroupreplications.replication.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumegroupreplications
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumegroupsnapshotclasses.groupsnapshot.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - groupsnapshot.storage.openshift.io
+    resources:
+      - volumegroupsnapshotclasses
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumegroupsnapshotcontents.groupsnapshot.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - groupsnapshot.storage.openshift.io
+    resources:
+      - volumegroupsnapshotcontents
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumegroupsnapshots.groupsnapshot.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - groupsnapshot.storage.openshift.io
+    resources:
+      - volumegroupsnapshots
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumereplicationclasses.replication.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumereplicationclasses
+  - verbs:
+      - get
+    apiGroups:
+      - apiextensions.k8s.io
+    resources:
+      - customresourcedefinitions
+    resourceNames:
+      - volumereplications.replication.storage.openshift.io
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumereplications
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumegroupreplicationclasses
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumegroupreplicationcontents
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumegroupreplications
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - groupsnapshot.storage.openshift.io
+    resources:
+      - volumegroupsnapshotclasses
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - groupsnapshot.storage.openshift.io
+    resources:
+      - volumegroupsnapshotcontents
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - groupsnapshot.storage.openshift.io
+    resources:
+      - volumegroupsnapshots
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumereplicationclasses
+  - verbs:
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - replication.storage.openshift.io
+    resources:
+      - volumereplications
+aggregationRule:
+  clusterRoleSelectors:
+    - matchLabels:
+        rbac.authorization.k8s.io/aggregate-to-edit: 'true'
