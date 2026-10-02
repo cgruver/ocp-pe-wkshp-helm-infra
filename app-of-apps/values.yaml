@@ -269,3 +269,7 @@ orchestrator:
     url: ""
   gitlab:
     url: ""
+
+workspaceImages:
+  name: workspace-images
+  namespace: workspace-images
