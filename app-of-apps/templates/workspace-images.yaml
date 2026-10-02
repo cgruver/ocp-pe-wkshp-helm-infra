@@ -23,7 +23,7 @@ spec:
       - /spec/generation
       - /status
   source:
-    path: cluster/workspace-images
+    path: workspace-images
     repoURL: {{ .Values.gitops.repoURL }}
     targetRevision: {{ .Values.gitops.targetRevision }}
     helm:
