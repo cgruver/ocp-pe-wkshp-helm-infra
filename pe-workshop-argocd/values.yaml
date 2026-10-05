@@ -1,8 +1,22 @@
 projectName: pe-workshop
 namespace: openshift-gitops
 
-sourceRepo: ""
+sourceRepos:
+  - 'https://gitlab-gitlab.*.dyn.redhatworkshops.io/rhdh/*'
+  - 'https://gitlab-gitlab.*.dyn.redhatworkshops.io/parasol/*'
 
-destination:
-  namespace: rhdh
-  server: https://kubernetes.default.svc
+destinations:
+  - namespace: rhdh
+    server: https://kubernetes.default.svc
+  - namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  - namespace: prerequisite-samples
+    server: https://kubernetes.default.svc
+  - namespace: dev-team-alpha
+    server: https://kubernetes.default.svc
+  - namespace: "*-build"
+    server: https://kubernetes.default.svc
+  - namespace: "*-dev"
+    server: https://kubernetes.default.svc
+  - namespace: "*-prod"
+    server: https://kubernetes.default.svc

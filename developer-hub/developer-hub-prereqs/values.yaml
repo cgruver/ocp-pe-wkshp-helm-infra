@@ -7,7 +7,7 @@ vault:
   name: vault
 
 operator:
-  channel: fast-1.9
+  channel: fast-1.10
   startingCSV: ""
   installPlanApproval: Automatic
   source: redhat-operators

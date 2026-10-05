@@ -14,3 +14,13 @@ clusterRole: admin
 clusterAdmins:
   - pe1
   - pe2
+
+groups:
+  - name: platformengineers
+    users:
+      - pe1
+      - pe2
+  - name: developers
+    users:
+      - dev1
+      - dev2

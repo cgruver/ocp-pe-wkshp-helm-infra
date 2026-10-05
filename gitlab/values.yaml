@@ -36,20 +36,14 @@ gitlab:
   groups:
     - name: rhdh
       repo:
-        - name: developer-hub-config
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-developer-hub-config.git
-        - name: rhdh-entities
-          url: https://github.com/redhat-pe-workshop/pe-workshop-entities.git
-        - name: template-developer-self-service
-          url: https://github.com/redhat-pe-workshop/rhdh-template-developer-self-service.git
-        - name: devfiles
-          url: https://github.com/redhat-ads-tech/devfiles.git
-        - name: rhdh-templates
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-rhdh-templates.git
-        - name: helm-charts
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-apps-helm.git
         - name: infra-app-of-apps
-          url: https://github.com/redhat-ads-tech/ocp-app-platform-demo-infra-app-of-apps.git
+          url: https://github.com/redhat-pe-workshop/infra-app-of-apps.git
+        - name: rhdh-template-developer-self-service
+          url: https://github.com/redhat-pe-workshop/rhdh-template-developer-self-service.git
+        - name: ocp-pe-wkshp-rhdh-configs
+          url: https://github.com/redhat-pe-workshop/ocp-pe-wkshp-rhdh-configs.git
+        - name: prerequisite-samples
+          url: https://github.com/redhat-pe-workshop/prerequisite-samples.git
       users:
         - id: pe1
         - id: pe2
@@ -68,11 +62,13 @@ gitlab:
     - name: parasol
       repo:
         - name: parasol-insurance
-          url: https://github.com/redhat-ads-tech/parasol-insurance.git
+          url: https://github.com/redhat-pe-workshop/parasol-insurance.git
         - name: parasol-insurance-manifests
-          url: https://github.com/redhat-ads-tech/parasol-insurance-manifests.git
+          url: https://github.com/redhat-pe-workshop/parasol-insurance-manifests.git
         - name: parasol-insurance-secured-manifests
-          url: https://github.com/redhat-ads-tech/parasol-insurance-secured-manifests.git
+          url: https://github.com/redhat-pe-workshop/parasol-insurance-secured-manifests.git
+        - name: parasol-entities
+          url: https://github.com/redhat-pe-workshop/parasol-entities.git
       users:
         - id: dev1
         - id: dev2
@@ -85,20 +81,32 @@ gitlab:
       templates:
         - devfile.yaml
     - group: rhdh
-      project: rhdh-templates
+      project: rhdh-template-developer-self-service
+      branch: main
+      source: https://github.com/redhat-pe-workshop/rhdh-template-developer-self-service.git
+      templates:
+        - quarkus-chatbot-rag/template.yaml
+    - group: rhdh
+      project: infra-app-of-apps
+      branch: main
+      source: https://github.com/redhat-pe-workshop/infra-app-of-apps.git
+    - group: rhdh
+      project: ocp-pe-wkshp-rhdh-configs
       branch: main
       templates:
-        - templates/parasol-insurance-secured/template.yaml
-        - templates/request-kafka-topic/template.yaml
-        - templates/request-kafka-user/template.yaml
-        - templates/quarkus-rest-api/template.yaml
+        - base/configmap-app-config.yaml
+        - overlays/02-sso-plugins/configmap-app-config-auth.yaml
+        - overlays/02-sso-plugins/patches/dynamic-plugins.yaml
+        - overlays/03-catalog-lightspeed-templates/configmap-app-config-catalog.yaml
+        - overlays/03-catalog-lightspeed-templates/configmap-app-config-lightspeed.yaml
 postgresql:
   dbUser: gitlab
   dbPassword: passw0rd
   dbName: gitlab_production
 
 cluster:
-  subdomain: 
+  subdomain:
+  apiServer:
 
 gitops:
   namespace:

@@ -6,19 +6,19 @@ metadata:
 spec:
   description: Scoped project for PE workshop attendees
   destinations:
-    - namespace: {{ .Values.destination.namespace }}
-      server: {{ .Values.destination.server }}
+  {{- range .Values.destinations }}
+    - namespace: {{ .namespace | quote }}
+      server: {{ .server }}
+  {{- end }}
   sourceRepos:
-    - {{ .Values.sourceRepo }}
-  clusterResourceWhitelist: []
+  {{- range .Values.sourceRepos }}
+    - {{ . }}
+  {{- end }}
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
   namespaceResourceWhitelist:
-    - group: rhdh.redhat.com
-      kind: Backstage
-    - group: ""
-      kind: ConfigMap
-    - group: ""
-      kind: Secret
-    - group: ""
-      kind: PersistentVolumeClaim
-    - group: external-secrets.io
-      kind: ExternalSecret
+    - group: "*"
+      kind: "*"

@@ -12,7 +12,9 @@ spec:
     targetRevision: main
     helm:
       valuesObject:
-        gitlabHost: {{ .Values.gitlab.host }}
-        gitopsNamespace: {{ .Values.argocd.namespace }}
-        kafkaNamespace: {{ .Values.amqStreams.namespace }}
+        gitlab:
+          host: {{ .Values.gitlab.host }}
+        argocd:
+          namespace: {{ .Values.argocd.namespace }}
+        project: {{ .Values.peWorkshopArgocd.projectName | default "pe-workshop" }}
 {{ include "app-of-apps.syncPolicy" . | indent 2 }}

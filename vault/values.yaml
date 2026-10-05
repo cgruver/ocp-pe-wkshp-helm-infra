@@ -1,5 +1,13 @@
 nameOverride: vault
 
+image:
+  repository: registry.connect.redhat.com/hashicorp/vault
+  tag: 1.21.4-ubi
+  pullPolicy: IfNotPresent
+
+cluster:
+  subdomain: ""
+
 kubernetes:
   apiserver:
 
