@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: {{ include "parasol-insurance-tenant.prefix" . }}-build
   namespace: {{ .Values.argocd.namespace }}
+  labels:
+    rhdh.redhat.com/app-name: {{ include "parasol-insurance-tenant.prefix" . }}
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
