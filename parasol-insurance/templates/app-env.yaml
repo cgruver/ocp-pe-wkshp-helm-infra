@@ -5,6 +5,8 @@ kind: Application
 metadata:
   name: parasol-insurance-{{ $env.name }}
   namespace: {{ $.Values.argocd.namespace }}
+  labels:
+    rhdh.redhat.com/app-name: parasol-insurance
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
