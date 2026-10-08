@@ -82,6 +82,7 @@ gitlab:
       branch: main
       templates:
         - devfile.yaml
+        - README.md
     - group: rhdh
       project: rhdh-template-developer-self-service
       branch: main
